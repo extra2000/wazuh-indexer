@@ -220,5 +220,5 @@ docker run --rm \
 
 apt-get update
 apt-get install -y rpm2cpio rpm cpio
-bash scripts/assemble.sh -v .0 -p linux -a x64 -d rpm
+bash scripts/assemble.sh -v 2.11.1 -p linux -a x64 -d rpm
 ```
