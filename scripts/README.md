@@ -32,7 +32,7 @@ act -j build -W .github/workflows/build.yml --artifact-server-path ./artifacts
 Within the [Docker environment](../docker):
 
 ```console
-bash scripts/build.sh -v 2.11.0 -s false -p linux -a {x64|arm64} -d {rpm|deb|tar}
+bash scripts/build.sh -v 2.11.1 -s false -p linux -a {x64|arm64} -d {rpm|deb|tar}
 ```
 
 The generated package is sent to `artifacts/`
@@ -104,7 +104,7 @@ The script will:
 ### Running in Act
 
 ```console
-act -j assemble -W .github/workflows/build.yml --artifact-server-path ./artifacts --matrix distribution:deb --matrix architecture:x64 --var OPENSEARCH_VERSION=2.11.0
+act -j assemble -W .github/workflows/build.yml --artifact-server-path ./artifacts --matrix distribution:deb --matrix architecture:x64 --var OPENSEARCH_VERSION=2.11.1
 
 [Build slim packages/build] 🏁  Job succeeded
 ```
@@ -197,7 +197,7 @@ The script will:
 ### Running in Act
 
 ```console
-act -j assemble -W .github/workflows/build.yml --artifact-server-path ./artifacts --matrix distribution:rpm --matrix architecture:x64 --var OPENSEARCH_VERSION=2.11.0
+act -j assemble -W .github/workflows/build.yml --artifact-server-path ./artifacts --matrix distribution:rpm --matrix architecture:x64 --var OPENSEARCH_VERSION=2.11.1
 
 [Build slim packages/build] 🏁  Job succeeded
 ```
@@ -220,5 +220,5 @@ docker run --rm \
 
 apt-get update
 apt-get install -y rpm2cpio rpm cpio
-bash scripts/assemble.sh -v 2.11.0 -p linux -a x64 -d rpm
+bash scripts/assemble.sh -v .0 -p linux -a x64 -d rpm
 ```
